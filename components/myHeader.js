@@ -52,7 +52,6 @@ export default {
         let plantilla = "";
         this.paises.forEach((val,id) => {
             plantilla += `<a class="p-2 link-secondary" href="#">${val.name}</a>`
-            console.log(plantilla);
         });
         document.querySelector("#paises").insertAdjacentHTML("beforeend", plantilla)
     }
