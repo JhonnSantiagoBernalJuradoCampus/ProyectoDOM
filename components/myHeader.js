@@ -58,5 +58,15 @@ export default {
             plantilla += `<a class="p-2 link-secondary" href="#">${val.name}</a>`
         });
         document.querySelector("#paises").insertAdjacentHTML("beforeend", plantilla)
+    },
+    fragShow(){
+        const ws = new Worker("storage/wsMyHeader.js", {type: "module"});
+
+        ws.postMessage({nombre: "bernal"});
+
+        ws.addEventListener("message", (e)=>{
+            console.log(e.data);
+            ws.terminate();
+        })
     }
 }
