@@ -5,7 +5,7 @@ import myAside from "./components/myAside.js";
 import mySection1 from "./components/mySection1.js";
 import mySection2 from "./components/mySection2.js";
 import mySection3 from "./components/mySection3.js";
-
+import myFooter from "./components/myFooter.js";
 
 myHeader.fragShow();
 
@@ -29,3 +29,5 @@ mySection2.showTable();
 
 mySection3.showSection();
 mySection3.showNav();
+
+myFooter.showFooter();
