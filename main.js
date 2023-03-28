@@ -9,13 +9,14 @@ myHeader.fragShow();
 myHeader.listTitle();
 myHeader.listPaises();
 
-
 myBanner.showImage();
 myBanner.showSectionBaner();
+
+
 myCards.showCard();
+
 myAside.showAside();
 
 mySection1.showArticle();
-
-
 mySection1.showList3();
+mySection1.showEnd();

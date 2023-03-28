@@ -45,6 +45,21 @@ export default{
         "hola"
     ],
     mensaje: "I dont know",
+    final: {
+        p: "Most of these elements are styled by browsers with few modifications on our part.",
+        h2: "Heading",
+        p1: `This is some additional paragraph placeholder content. It has been written to fill the available space and
+        show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
+        demonstration flowing, so be on the lookout for this exact same string of text.`,
+        h3: "Sub-heading",
+        p2: `This is some additional paragraph placeholder content. It has been written to fill the available space and
+        show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the
+        demonstration flowing, so be on the lookout for this exact same string of text.`,
+        code: "Example code block",
+        p3: `This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
+        repetitive body text used throughout.`
+    },
+
 
 
     showArticle(){
@@ -96,5 +111,16 @@ export default{
         document.querySelector("#section-1").insertAdjacentHTML("beforeend", `<ul>
         ${plantilla}
         </ul>`)
+    },
+    showEnd(){
+        document.querySelector("#section-1").insertAdjacentHTML("beforeend", `
+        <p>${this.final.p}</p>
+        <h2>${this.final.h2}</h2>
+        <p>${this.final.p1}</p>
+        <h3>${this.final.h3}</h3>
+        <p>${this.final.p2}</p>
+        <pre><code>${this.final.code}</code></pre>
+        <p>${this.final.p3}</p> `)
     }
+
 }
