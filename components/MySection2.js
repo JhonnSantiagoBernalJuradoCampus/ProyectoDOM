@@ -102,15 +102,20 @@ export default{
         });
         document.querySelector("#tbody").insertAdjacentHTML("beforeend", plantilla);
         plantilla = "";
-        this.table[2].forEach((val,id) => {
+        const data3 = this.table.map((val,id) => {
+            return(
+                (val.td2)
+            )
+        })
+        data3[2].forEach((val,id) => {
             plantilla += `
             <td>${val}</td>`
-        });
+        });         
         document.querySelector("#tfoot").insertAdjacentHTML("beforeend",`
-        <tr>
-        ${plantilla}
-        </tr>
-        `)
-    },
-    
+            <tr>
+                ${plantilla}
+            </tr>
+            <p>${this.p}</p>`
+        )
+    }
 }

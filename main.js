@@ -3,7 +3,7 @@ import myBanner from "./components/myBanner.js";
 import myCards from "./components/myCards.js";
 import myAside from "./components/myAside.js";
 import mySection1 from "./components/mySection1.js";
-import mySection2 from "./components/MySection2.js"
+import mySection2 from "./components/mySection2.js"
 
 
 myHeader.fragShow();
