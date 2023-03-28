@@ -43,9 +43,18 @@ export default{
                     "7",
                     "9"
                 ]
-            ],
+            ]
+        },
+        {
+            td2: [
+                "Totals",
+                "21",
+                "23"
+            ]
         }
     ],
+    p: `This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly
+    repetitive body text used throughout.`,
     showFirstPart(){
         document.querySelector("#section-2").insertAdjacentHTML("afterbegin",`
         <h2 class="blog-post-title">${this.firstPart.h2}</h2>
@@ -91,6 +100,17 @@ export default{
                 ${tds}
             </tr>`
         });
-        document.querySelector("#tbody").insertAdjacentHTML("beforeend", plantilla)
-    }
+        document.querySelector("#tbody").insertAdjacentHTML("beforeend", plantilla);
+        plantilla = "";
+        this.table[2].forEach((val,id) => {
+            plantilla += `
+            <td>${val}</td>`
+        });
+        document.querySelector("#tfoot").insertAdjacentHTML("beforeend",`
+        <tr>
+        ${plantilla}
+        </tr>
+        `)
+    },
+    
 }
