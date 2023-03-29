@@ -13,9 +13,9 @@ myBanner.showImage();
 myBanner.fragShow();
 
 
-myCards.showCard();
+myCards.fragShow();
 
-myAside.showAside();
+myAside.fragShow();
 
 /* mySection1.showArticle();
 mySection1.showList3();
