@@ -1,4 +1,16 @@
+export let wsMyHeader = {
+    listTitle(p1){
+        return `<a class="blog-header-logo text-dark" href="${p1.href}">${p1.name}</a>`
+    },
+    listPaises(p1){
+        let plantilla = "";
+        p1.forEach((val,id) => {
+            plantilla += `<a class="p-2 link-secondary" href="#">${val.name}</a>`
+        });
+        return plantilla
+    },
+}
+
 self.addEventListener("message", (e)=>{
-    console.log(e.data);
-    postMessage({mensaje: `el mensaje ${e.data.nombre} obtenido`})
+    postMessage(wsMyHeader[`${e.data.module}`](e.data.data))
 })

@@ -49,25 +49,30 @@ export default {
             href: "#"
         }
     ],
-    listTitle(){
-        document.querySelector("#title").insertAdjacentHTML("beforeend",`<a class="blog-header-logo text-dark" href="${this.title.href}">${this.title.name}</a>`)
-    },
-    listPaises(){
-        let plantilla = "";
-        this.paises.forEach((val,id) => {
-            plantilla += `<a class="p-2 link-secondary" href="#">${val.name}</a>`
-        });
-        document.querySelector("#paises").insertAdjacentHTML("beforeend", plantilla)
-    },
+    
+
+    
     fragShow(){
         const ws = new Worker("storage/wsMyHeader.js", {type: "module"});
 
-        ws.postMessage({nombre: "bernal"});
+        let id = [];
+        let count = 0;
+
+        ws.postMessage({module: "listTitle", data: this.title});
+
+        ws.postMessage({module: "listPaises", data: this.paises});
+
+        id= ["#title", "#paises"];
 
         ws.addEventListener("message", (e)=>{
-            console.log(e.data);
-            ws.terminate();
+
+            let doc = new DOMParser().parseFromString(e.data, "text/html");
+
+            document.querySelector(id[count]).append(...doc.body.children);
+
+            (id.length-1==count) ? ws.terminate(): count++;
         })
+
     }
 
 }
