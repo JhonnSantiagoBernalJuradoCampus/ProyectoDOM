@@ -17,7 +17,4 @@ myAside.fragShow();
 
 myFooter.fragShow();
 
-myMain.listSection1();
-myMain.listSection2();
-myMain.listTable();
-myMain.listSection3();
+myMain.fragShow();
