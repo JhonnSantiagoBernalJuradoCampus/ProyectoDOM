@@ -164,13 +164,19 @@ export default{
     listTable(){
         let planTable = "";
         this.table.forEach((val,id) =>{
-            planTable += `<tr>
+            planTable += `<tr">
                 <td>${val.paises}</td>
                 <td>${val.participacion}</td>
                 <td>${val.mundiales}</td>
-            </tr>`
-        document.querySelector("#arTable").insertAdjacentHTML("beforeend", planTable)    
+            </tr> <br>` 
         })
-        
+        document.querySelector("#arTable").insertAdjacentHTML("beforeend", `
+        <tr>
+            <th>Servers</th>
+            <th>Jugadores</th>
+            <th>Ip</th>
+        </tr> <br>
+        ${planTable}
+        `)   
     }
 }

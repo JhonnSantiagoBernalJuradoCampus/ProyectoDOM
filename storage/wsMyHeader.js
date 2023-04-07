@@ -9,6 +9,7 @@ export let wsMyHeader = {
         });
         return plantilla
     },
+    
 }
 
 self.addEventListener("message", (e)=>{
