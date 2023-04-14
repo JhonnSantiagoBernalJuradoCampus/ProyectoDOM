@@ -1,58 +1,13 @@
-export default {
-    title: {
-        name: "Voleibol",
-        href: "#"
-    },
-    paises: [
-        {
-            name: "Brasil",
-            href: "#"
-        },
-        {
-            name: "EE.UU",
-            href: "#"
-        },
-        {
-            name: "Italia",
-            href: "#"
-        },
-        {
-            name: "Rusia",
-            href: "#"
-        },
-        {
-            name: "Japón",
-            href: "#"
-        },
-        {
-            name: "Serbia",
-            href: "#"
-        },
-        {
-            name: "Polonia",
-            href: "#"
-        },
-        {
-            name: "Cuba",
-            href: "#"
-        },
-        {
-            name: "China",
-            href: "#"
-        },
-        {
-            name: "Alemania",
-            href: "#"
-        },
-        {
-            name: "Colombia",
-            href: "#"
-        }
-    ],
-    
+import config from "../storage/config.js";
 
-    
+
+export default {
     fragShow(){
+        config.dataMyHeader()
+
+        Object.assign(this, JSON.parse(localStorage.getItem("myHeader")))
+
+        
         const ws = new Worker("storage/wsMyHeader.js", {type: "module"});
 
         let id = [];
